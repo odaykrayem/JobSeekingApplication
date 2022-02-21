@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#7584f2</color>
+    <color name="colorPrimaryDark">#4253ce</color>
+    <color name="colorAccent">#fb5941</color>
+
+    <color name="white">#ffffff</color>
+
+    <color name="black">#000000</color>
+    <color name="input_login">#222222</color>
+    <color name="input_login_hint">#999999</color>
+    <color name="input_register">#888888</color>
+    <color name="input_register_bg">#3b4148</color>
+    <color name="input_register_hint">#5e6266</color>
+
+
+
+    <color name="status_rejected">#d9534f</color>
+    <color name="status_processing">#f0ad4e</color>
+    <color name="status_accepted">#5cb85c</color>
+
+    <color name="primaryTextColor">#A800FF48</color>
+    <color name="primaryTextColorDark">#A8037323</color>
+</resources>

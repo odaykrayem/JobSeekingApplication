@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".jobseeker.fragments.JobDetailsFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Job Details"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:layout_marginBottom="40dp"
+            android:textSize="22sp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/job_position_title"
+                android:layout_weight="1"
+                android:alpha="0.8"
+                android:textAlignment="viewStart"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:id="@+id/job_position_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="junior android developer"
+                android:layout_weight="1"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textAlignment="textStart"
+                android:textSize="18sp"/>
+
+
+
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/required_experience"
+                android:layout_weight="1"
+                android:alpha="0.8"
+                android:textAlignment="viewStart"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:id="@+id/required_experience"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Two years"
+                android:layout_weight="1"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textAlignment="textStart"
+                android:textSize="18sp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/work_type"
+                android:layout_weight="1"
+                android:alpha="0.8"
+                android:textAlignment="viewStart"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:id="@+id/work_type"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="android developer with the minimum required skills to get this job"
+                android:layout_weight="1"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textAlignment="textStart"
+                android:textSize="18sp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/work_time"
+                android:layout_weight="1"
+                android:alpha="0.8"
+                android:textAlignment="viewStart"
+                android:textSize="18sp"/>
+
+
+            <TextView
+                android:id="@+id/work_time"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="8 am - 3 pm"
+                android:layout_weight="1"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textAlignment="textStart"
+                android:textSize="18sp"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/salary_range"
+                android:layout_weight="1"
+                android:alpha="0.8"
+                android:textAlignment="viewStart"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:id="@+id/salary_range"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="3000 - 5000"
+                android:layout_weight="1"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textAlignment="textStart"
+                android:textSize="18sp"/>
+
+        </LinearLayout>
+        <TextView
+            android:id="@+id/required_skills"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="- some exceprience with java/kotlin and xml\n- designing patterns eg.MVP/MVVM\n- nice to have : ability of dealing with third party APIs"
+            android:lineSpacingExtra="3dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textAlignment="textStart"
+            android:textSize="18sp"/>
+
+        <Button
+            android:id="@+id/apply"
+            android:layout_width="160dp"
+            android:layout_height="35dp"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            android:text="@string/apply"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:padding="8dp"
+            android:background="@drawable/bg_btn"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="30dp"
+            android:layout_gravity="center_horizontal"
+            />
+
+
+    </LinearLayout>
+
+
+</ScrollView>

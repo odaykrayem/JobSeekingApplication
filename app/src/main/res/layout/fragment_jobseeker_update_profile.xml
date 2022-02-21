@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorPrimary"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="10dp"
+    tools:context=".jobseeker.fragments.JobSeekerProfileFragment"
+    android:layoutDirection="ltr">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_input"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:orientation="vertical">
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/hint_name"
+                    android:textSize="18sp"
+                    android:layout_weight="1"
+                    android:padding="12dp"
+                    android:alpha="0.6"
+                    android:singleLine="true"
+                    android:textColor="@color/input_login" />
+
+                <EditText
+                    android:id="@+id/name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:textSize="18sp"
+                    android:hint="Shahad"
+                    android:textColorHint="@color/input_register_hint"
+                    android:padding="12dp"
+                    android:singleLine="true"
+                    android:textColor="@color/input_login" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/hint_email"
+                    android:textSize="18sp"
+                    android:layout_weight="1"
+                    android:padding="12dp"
+                    android:alpha="0.6"
+                    android:singleLine="true"
+                    android:textColor="@color/input_login" />
+
+                <EditText
+                    android:id="@+id/email"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:textSize="18sp"
+                    android:hint="email@gmail.com"
+                    android:textColorHint="@color/input_register_hint"
+                    android:padding="12dp"
+                    android:singleLine="true"
+                    android:textColor="@color/input_login" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/hint_phone"
+                    android:textSize="18sp"
+                    android:layout_weight="1"
+                    android:padding="12dp"
+                    android:alpha="0.6"
+                    android:singleLine="true"
+                    android:textColor="@color/input_login"/>
+
+                <EditText
+                    android:id="@+id/phone"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:textSize="18sp"
+                    android:hint="0965345323"
+                    android:textColorHint="@color/input_register_hint"
+                    android:padding="12dp"
+                    android:singleLine="true"
+                    android:textColor="@color/input_login"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/hint_education"
+                    android:textSize="18sp"
+                    android:layout_weight="1.5"
+                    android:padding="12dp"
+                    android:alpha="0.6"
+                    android:singleLine="true"
+                    android:textColor="@color/input_login"/>
+
+                <EditText
+                    android:id="@+id/education"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:textSize="18sp"
+                    android:hint="Computer science"
+                    android:textColorHint="@color/input_register_hint"
+                    android:padding="12dp"
+                    android:singleLine="true"
+                    android:textColor="@color/input_login" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.3dp"
+                android:background="@android:color/black"
+                android:layout_marginBottom="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/black"
+                android:alpha="0.7"
+                android:textSize="18sp"
+                android:text="@string/experience_details"
+                android:layout_marginBottom="10dp"
+
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/hint_work_experience"
+                    android:textSize="18sp"
+                    android:padding="12dp"
+                    android:alpha="0.6"
+                    android:singleLine="true"
+                    android:textColor="@color/input_login" />
+
+                <EditText
+                    android:id="@+id/work_experience"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:hint="Tow years of experience at google"
+                    android:textColorHint="@color/input_register_hint"
+                    android:padding="12dp"
+                    android:singleLine="true"
+                    android:textColor="@color/input_login" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/hint_language"
+                    android:textSize="18sp"
+                    android:padding="12dp"
+                    android:alpha="0.6"
+                    android:singleLine="true"
+                    android:textColor="@color/input_login" />
+
+                <EditText
+                    android:id="@+id/language"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:hint="English"
+                    android:textColorHint="@color/input_register_hint"
+                    android:padding="12dp"
+                    android:singleLine="true"
+                    android:textColor="@color/input_login"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/hint_skills"
+                    android:textSize="18sp"
+                    android:padding="12dp"
+                    android:alpha="0.6"
+                    android:singleLine="true"
+                    android:textColor="@color/input_login"/>
+
+                <EditText
+                    android:id="@+id/start_of_study"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:hint="problem solving"
+                    android:textColorHint="@color/input_register_hint"
+                    android:padding="12dp"
+                    android:singleLine="true"
+                    android:textColor="@color/input_login" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/hint_summary"
+                    android:padding="10dp"
+                    android:textSize="18sp"
+                    android:alpha="0.6"
+                    android:textColor="@color/input_login"
+                    />
+
+                <EditText
+                    android:id="@+id/summary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:hint="summary"
+                    android:padding="12dp"
+                    android:singleLine="true"
+                    android:textColor="@color/input_login"
+                    android:textColorHint="@color/input_login_hint" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+        <Button
+            android:id="@+id/show_cv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bg_input"
+            android:text="@string/show_cv"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/update"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="40dp"
+            android:background="@drawable/bg_btn"
+            android:text="@string/update_profile"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+
+
+</androidx.core.widget.NestedScrollView>
