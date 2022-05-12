@@ -1,27 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.mrmindteam.jobseekingapplication">
-
+    package="com.example.jobseekingapplication">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/ic_job_2"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/ic_job_2"
         android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LoginActivity"></activity>
-        <activity android:name=".jobadvertiser.JobAdvertiserSignUpActivity" />
-        <activity android:name=".jobadvertiser.JobAdvertiserMain" />
-        <activity android:name=".jobseeker.JobSeekerSignUpActivity">
-
-        </activity>
-        <activity android:name=".jobseeker.JobSeekerMain" />
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".ResetPasswordActivity" />
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".company.CompanySignUpActivity" />
+        <activity android:name=".company.CompanyMain" />
+        <activity android:name=".jobseeker.JobSeekerSignUpActivity">
+
+        </activity>
+        <activity android:name=".jobseeker.JobSeekerMain">
+
         </activity>
     </application>
 

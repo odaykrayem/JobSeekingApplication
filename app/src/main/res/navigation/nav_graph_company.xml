@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/company_nav_graph"
+    app:startDestination="@id/menu_jobs">
+
+    <fragment
+        android:id="@+id/menu_jobs"
+        android:name="com.example.jobseekingapplication.company.fragments.CompanyJobsFragment"
+        android:label="@string/posted_jobs"
+        tools:layout="@layout/fragment_company_jobs" >
+        <action
+            android:id="@+id/action_ToAddNewJobVacancy"
+            app:destination="@id/AddJobVacancyFragment"
+            app:popUpTo="@id/menu_jobs"/>
+    </fragment>
+    <fragment
+        android:id="@+id/AddJobVacancyFragment"
+        android:name="com.example.jobseekingapplication.company.fragments.AddJobVacancyFragment"
+        android:label="@string/add_job"
+        tools:layout="@layout/fragment_add_job_vacancy"/>
+    <fragment
+        android:id="@+id/menu_job_requests"
+        android:name="com.example.jobseekingapplication.company.fragments.CompanyJobRequestsFragment"
+        android:label="@string/job_requests"
+        tools:layout="@layout/fragment_job_requests">
+        <action
+            android:id="@+id/action_ToShowJobSeekerDetailsFragment"
+            app:destination="@id/ShowJobSeekerDetailsFragment"
+            app:popUpTo="@id/menu_job_requests" />
+    </fragment>
+    <fragment
+        android:id="@+id/ShowJobSeekerDetailsFragment"
+        android:name="com.example.jobseekingapplication.jobseeker.fragments.JobSeekerProfileFragment"
+        android:label="@string/jobseeker_details"
+        tools:layout="@layout/fragment_job_seeker_profile">
+    <action
+    android:id="@+id/action_Profile_ToShowCVFragment"
+    app:destination="@id/ShowCVFragment"
+    app:popUpTo="@id/menu_profile" />
+    </fragment>
+    <fragment
+        android:id="@+id/ShowCVFragment"
+        android:name="com.example.jobseekingapplication.jobseeker.fragments.ViewCVFileFragment"
+        android:label="@string/show_cv"
+        tools:layout="@layout/fragment_view_cv_file"/>
+
+    <fragment
+        android:id="@+id/menu_profile"
+        android:name="com.example.jobseekingapplication.company.fragments.CompanyProfileFragment"
+        android:label="@string/profile"
+        tools:layout="@layout/fragment_company_profile">
+        <action
+            android:id="@+id/action_ToUpdateProfile"
+            app:destination="@id/UpdateProfileFragment"
+            app:popUpTo="@id/menu_profile" />
+    </fragment>
+    <fragment
+        android:id="@+id/UpdateProfileFragment"
+        android:name="com.example.jobseekingapplication.company.fragments.CompanyUpdateProfileFragment"
+        android:label="@string/update_profile"
+        tools:layout="@layout/fragment_company_update_profile"/>
+</navigation>

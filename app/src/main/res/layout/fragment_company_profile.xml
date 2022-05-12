@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="10dp"
+        tools:context=".jobseeker.fragments.JobSeekerProfileFragment"
+        android:layoutDirection="ltr">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_input"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/name_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/hint_company_name"
+                    android:textSize="16sp"
+                    android:padding="12dp"
+                    android:alpha="0.6"
+                    android:textColor="@color/input_login" />
+
+                <TextView
+                    android:id="@+id/company_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/name_txt"
+                    android:gravity="center_vertical"
+                    android:padding="12dp"
+                    android:text="google co."
+                    android:textColor="@color/input_login"
+                    android:textSize="18sp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/email_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/hint_email"
+                    android:textSize="18sp"
+                    android:padding="12dp"
+                    android:alpha="0.6"
+                    android:singleLine="true"
+                    android:textColor="@color/input_login" />
+
+                <TextView
+                    android:id="@+id/email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/email_txt"
+                    android:padding="12dp"
+                    android:singleLine="true"
+                    android:text="email@gmail.com"
+                    android:textColor="@color/input_login"
+                    android:textSize="18sp" />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/address_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.6"
+                    android:padding="12dp"
+                    android:singleLine="true"
+                    android:text="@string/hint_company_address"
+                    android:textColor="@color/input_login"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/company_address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/address_txt"
+                    android:padding="12dp"
+                    android:singleLine="true"
+                    android:text="0965345323"
+                    android:textColor="@color/input_login"
+                    android:textSize="18sp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/details_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/hint_company_details"
+                    android:textSize="18sp"
+                    android:padding="12dp"
+                    android:alpha="0.6"
+                    android:singleLine="true"
+                    android:textColor="@color/input_login"/>
+
+                <TextView
+                    android:id="@+id/company_details"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/details_txt"
+                    android:padding="12dp"
+                    android:singleLine="true"
+                    android:text="Computer science"
+                    android:textColor="@color/input_login"
+                    android:textSize="18sp" />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.3dp"
+                android:background="@android:color/black"
+                android:layout_marginBottom="10dp" />
+
+
+        </LinearLayout>
+
+
+
+        <Button
+            android:id="@+id/update"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="40dp"
+            android:background="@drawable/bg_btn"
+            android:text="@string/update_profile"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+
+

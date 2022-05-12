@@ -27,7 +27,6 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_toEndOf="@id/image"
             android:padding="8dp"
             android:layout_weight="6">
 
@@ -61,7 +60,7 @@
                 />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/apply"
+                android:id="@+id/btn_apply"
                 android:layout_width="160dp"
                 android:layout_height="35dp"
                 android:textStyle="bold"

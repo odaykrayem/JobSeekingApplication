@@ -183,7 +183,31 @@
                     android:textColor="@color/input_login" />
 
             </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/hint_skills"
+                    android:textSize="18sp"
+                    android:padding="12dp"
+                    android:alpha="0.6"
+                    android:singleLine="true"
+                    android:textColor="@color/input_login" />
 
+                <TextView
+                    android:id="@+id/skills"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:text="Tow years of experience at google"
+                    android:padding="12dp"
+                    android:singleLine="true"
+                    android:textColor="@color/input_login" />
+
+            </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -207,32 +231,6 @@
                     android:padding="12dp"
                     android:singleLine="true"
                     android:textColor="@color/input_login"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/hint_skills"
-                    android:textSize="18sp"
-                    android:padding="12dp"
-                    android:alpha="0.6"
-                    android:singleLine="true"
-                    android:textColor="@color/input_login"/>
-
-                <TextView
-                    android:id="@+id/start_of_study"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="18sp"
-                    android:text="problem solving"
-                    android:padding="12dp"
-                    android:singleLine="true"
-                    android:textColor="@color/input_login" />
 
             </LinearLayout>
 
