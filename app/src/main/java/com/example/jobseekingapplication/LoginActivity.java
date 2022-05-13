@@ -305,6 +305,7 @@ public class LoginActivity extends AppCompatActivity {
                     }
                 });
     }
+    
     private void displayResetPasswordDialog(String userEmail) {
         LayoutInflater factory = LayoutInflater.from(this);
         final View view = factory.inflate(R.layout.dialog_reset_password, null);

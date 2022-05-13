@@ -58,7 +58,7 @@ public class JobSeekerMain extends AppCompatActivity implements NavigationView.O
         navController = Navigation.findNavController(this, R.id.nav_host_fragment);
 
 
-        mAppBarConfiguration = new AppBarConfiguration.Builder( R.id.menu_job_vacancies, R.id.menu_my_applied_jobs, R.id.menu_profile).setOpenableLayout(drawerLayout).build();
+        mAppBarConfiguration = new AppBarConfiguration.Builder(R.id.menu_job_vacancies, R.id.menu_my_applied_jobs, R.id.menu_profile).setOpenableLayout(drawerLayout).build();
 
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
 

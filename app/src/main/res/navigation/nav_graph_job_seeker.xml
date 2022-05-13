@@ -36,7 +36,7 @@
         <action
             android:id="@+id/action_ToUpdateProfile"
             app:destination="@id/UpdateProfileFragment"
-            app:popUpTo="@id/menu_profile" />
+            app:popUpTo="@id/menu_profile"/>
         <action
             android:id="@+id/action_Profile_ToShowCVFragment"
             app:destination="@id/ShowCVFragment"

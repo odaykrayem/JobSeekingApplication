@@ -32,6 +32,7 @@ import com.example.jobseekingapplication.jobseeker.adapters.SkillsAdapter;
 import com.example.jobseekingapplication.model.JobSeeker;
 import com.example.jobseekingapplication.model.Skill;
 import com.example.jobseekingapplication.utils.FilePath;
+import com.example.jobseekingapplication.utils.FileUtils;
 import com.example.jobseekingapplication.utils.SharedPrefManager;
 import com.example.jobseekingapplication.utils.Urls;
 import com.example.jobseekingapplication.utils.Validation;
@@ -152,7 +153,7 @@ public class JobSeekerSignUpActivity extends AppCompatActivity {
 //            Uri picUri = pdfUri;
             Log.d("filePath", String.valueOf(pdfUri));
 
-            filePath = FilePath.getPath(this,pdfUri);
+            filePath = FileUtils.getPath(this,pdfUri);
             if (filePath != null) {
                 Log.d("filePath", filePath);
                 Toast.makeText(this, "started searching", Toast.LENGTH_SHORT).show();
