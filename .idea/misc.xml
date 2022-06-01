@@ -14,6 +14,7 @@
         <entry key="..\:/Users/O_o/AndroidStudioProjects/JobSeekingApplication/app/src/main/res/layout/activity_company_sign_up.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/O_o/AndroidStudioProjects/JobSeekingApplication/app/src/main/res/layout/activity_job_seeker_main.xml" value="0.18" />
         <entry key="..\:/Users/O_o/AndroidStudioProjects/JobSeekingApplication/app/src/main/res/layout/activity_job_seeker_sign_up.xml" value="0.22" />
+        <entry key="..\:/Users/O_o/AndroidStudioProjects/JobSeekingApplication/app/src/main/res/layout/activity_jobs_sign_up.xml" value="0.22" />
         <entry key="..\:/Users/O_o/AndroidStudioProjects/JobSeekingApplication/app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/Users/O_o/AndroidStudioProjects/JobSeekingApplication/app/src/main/res/layout/activity_main.xml" value="0.12129629629629629" />
         <entry key="..\:/Users/O_o/AndroidStudioProjects/JobSeekingApplication/app/src/main/res/layout/activity_reset_password.xml" value="0.1" />
@@ -34,9 +35,14 @@
         <entry key="..\:/Users/O_o/AndroidStudioProjects/JobSeekingApplication/app/src/main/res/layout/fragment_job_seeker_applied_jobs.xml" value="0.22" />
         <entry key="..\:/Users/O_o/AndroidStudioProjects/JobSeekingApplication/app/src/main/res/layout/fragment_job_seeker_profile.xml" value="0.25" />
         <entry key="..\:/Users/O_o/AndroidStudioProjects/JobSeekingApplication/app/src/main/res/layout/fragment_job_vacancies.xml" value="0.22" />
+        <entry key="..\:/Users/O_o/AndroidStudioProjects/JobSeekingApplication/app/src/main/res/layout/fragment_jobs_jobs_list.xml" value="0.18" />
+        <entry key="..\:/Users/O_o/AndroidStudioProjects/JobSeekingApplication/app/src/main/res/layout/fragment_jobs_profile.xml" value="0.20364583333333333" />
+        <entry key="..\:/Users/O_o/AndroidStudioProjects/JobSeekingApplication/app/src/main/res/layout/fragment_jobs_update_profile.xml" value="0.20364583333333333" />
         <entry key="..\:/Users/O_o/AndroidStudioProjects/JobSeekingApplication/app/src/main/res/layout/fragment_jobseeker_update_profile.xml" value="0.22" />
+        <entry key="..\:/Users/O_o/AndroidStudioProjects/JobSeekingApplication/app/src/main/res/layout/fragment_update_job_vacancy.xml" value="0.18055555555555555" />
         <entry key="..\:/Users/O_o/AndroidStudioProjects/JobSeekingApplication/app/src/main/res/layout/fragment_view_cv_file.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/O_o/AndroidStudioProjects/JobSeekingApplication/app/src/main/res/layout/item_advertiser_job.xml" value="0.1" />
+        <entry key="..\:/Users/O_o/AndroidStudioProjects/JobSeekingApplication/app/src/main/res/layout/item_company_job.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/O_o/AndroidStudioProjects/JobSeekingApplication/app/src/main/res/layout/item_job_application.xml" value="0.22" />
         <entry key="..\:/Users/O_o/AndroidStudioProjects/JobSeekingApplication/app/src/main/res/layout/item_job_request.xml" value="0.1" />
         <entry key="..\:/Users/O_o/AndroidStudioProjects/JobSeekingApplication/app/src/main/res/layout/item_job_vacancy.xml" value="0.14722222222222223" />

@@ -27,11 +27,10 @@ import com.androidnetworking.error.ANError;
 import com.androidnetworking.interfaces.JSONObjectRequestListener;
 import com.example.jobseekingapplication.LoginActivity;
 import com.example.jobseekingapplication.R;
-import com.example.jobseekingapplication.company.CompanySignUpActivity;
+import com.example.jobseekingapplication.jobs.JobsSignUpActivity;
 import com.example.jobseekingapplication.jobseeker.adapters.SkillsAdapter;
 import com.example.jobseekingapplication.model.JobSeeker;
 import com.example.jobseekingapplication.model.Skill;
-import com.example.jobseekingapplication.utils.FilePath;
 import com.example.jobseekingapplication.utils.FileUtils;
 import com.example.jobseekingapplication.utils.SharedPrefManager;
 import com.example.jobseekingapplication.utils.Urls;
@@ -98,7 +97,7 @@ public class JobSeekerSignUpActivity extends AppCompatActivity {
             finish();
         });
         mGoToCompanySignUpBtn.setOnClickListener(v->{
-            startActivity(new Intent(this, CompanySignUpActivity.class));
+            startActivity(new Intent(this, JobsSignUpActivity.class));
             finish();
         });
         mSignUpBtn.setOnClickListener(v->{

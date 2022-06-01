@@ -1,4 +1,4 @@
-package com.example.jobseekingapplication.company;
+package com.example.jobseekingapplication.jobs;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,7 +20,7 @@ import com.example.jobseekingapplication.R;
 import com.example.jobseekingapplication.utils.SharedPrefManager;
 import com.google.android.material.navigation.NavigationView;
 
-public class CompanyMain extends AppCompatActivity  implements NavigationView.OnNavigationItemSelectedListener, DrawerLayout.DrawerListener{
+public class JobsMain extends AppCompatActivity  implements NavigationView.OnNavigationItemSelectedListener, DrawerLayout.DrawerListener{
 
     public Toolbar toolbar;
 
@@ -39,7 +39,7 @@ public class CompanyMain extends AppCompatActivity  implements NavigationView.On
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_company_main);
+        setContentView(R.layout.activity_jobs_main);
         prefManager = SharedPrefManager.getInstance(this);
 
         setupNavigation();

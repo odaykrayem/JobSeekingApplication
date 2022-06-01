@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    android:background="@color/colorPrimary"
+    >
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        >
+
+        <EditText
+            android:id="@+id/job_position_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/bg_edit_text"
+            android:hint="@string/hint_job_position_title"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:textColor="@color/input_login"
+            android:textColorHint="@color/input_login_hint" />
+
+        <RelativeLayout
+            android:id="@+id/required_skills"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="10dp"
+            android:layout_below="@id/job_position_title"
+            android:layoutDirection="ltr"
+            >
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/skills_chooser"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_edit_text"
+                android:tooltipText="Skills"
+                />
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_arrow_down"
+                android:layout_alignParentEnd="true"
+                app:tint="@color/black"
+                android:layout_centerVertical="true"
+                />
+        </RelativeLayout>
+
+        <EditText
+            android:id="@+id/required_experience"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/required_skills"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/bg_edit_text"
+            android:hint="@string/required_experience"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:textColor="@color/input_login"
+            android:textColorHint="@color/input_login_hint" />
+
+        <EditText
+            android:id="@+id/work_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/required_experience"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/bg_edit_text"
+            android:hint="@string/work_type"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:textColor="@color/input_login"
+            android:textColorHint="@color/input_login_hint" />
+        <EditText
+            android:id="@+id/work_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/bg_edit_text"
+            android:hint="@string/work_time"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:textColor="@color/input_login"
+            android:textColorHint="@color/input_login_hint"
+            android:layout_below="@id/work_type"/>
+        <EditText
+            android:id="@+id/salary_range"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/bg_edit_text"
+            android:hint="@string/salary_range"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:textColor="@color/input_login"
+            android:textColorHint="@color/input_login_hint"
+            android:layout_below="@id/work_time"/>
+
+        <Button
+            android:id="@+id/update_job"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/salary_range"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="40dp"
+            android:background="@drawable/bg_btn"
+            android:text="@string/update_job"
+            android:textAllCaps="false"
+            android:textColor="@color/white" />
+    </RelativeLayout>
+
+</RelativeLayout>

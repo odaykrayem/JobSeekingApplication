@@ -102,24 +102,28 @@ public class JobSeekerAppliedJobsFragment extends Fragment implements  SwipeRefr
                     public void onResponse(JSONObject response) {
                         try {
                             JSONObject jsonObject = response;
+                            Log.e("res", response.toString());
                             String message = jsonObject.getString("message");
                             String successMessage = "Found";
                             if(message.toLowerCase().contains(successMessage.toLowerCase())){
                                 JSONArray jsonArray = jsonObject.getJSONArray("data");
                                 for (int i = 0; i < jsonArray.length(); i++) {
                                     JSONObject obj = jsonArray.getJSONObject(i);
-                                    JSONObject job_data = obj.getJSONObject("job");
-                                    JSONObject company_data = job_data.getJSONObject("company");
+                                    if(!obj.isNull("job")){
+                                        JSONObject job_data = obj.getJSONObject("job");
+                                        JSONObject company_data = job_data.getJSONObject("job");
 
-                                    list.add(
-                                            new JobApplication(
-                                                    Integer.parseInt(obj.getString("id")),
-                                                    job_data.getString("job_position_title"),
-                                                    company_data.getString("company_name"),
-                                                    Integer.parseInt(obj.getString("status")),
-                                                    obj.getString("created_at")
-                                            )
-                                    );
+                                        list.add(
+                                                new JobApplication(
+                                                        Integer.parseInt(obj.getString("id")),
+                                                        job_data.getString("job_position_title"),
+                                                        company_data.getString("job_name"),
+                                                        Integer.parseInt(obj.getString("status")),
+                                                        obj.getString("created_at")
+                                                )
+                                        );
+                                    }
+
                                 }
                                 mAdapter = new AppliedJobsAdapter(context, list);
                                 mList.setAdapter(mAdapter);

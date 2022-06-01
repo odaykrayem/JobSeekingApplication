@@ -14,16 +14,17 @@ public class Urls {
     public static final String GET_SKILLS = BASE_URL+ "get_skills";
     public static final String GET_APPLIED_JOBS = BASE_URL+  "get_job_applications" ;
 
-    public static String REGISTER_COMPANY = BASE_URL + "register_company";
+    public static String REGISTER_COMPANY = BASE_URL + "register_job";
     public static String GET_JOB_VACANCIES = BASE_URL + "get_job_opportunities";
     public static String APPLY_FOR_JOB_VACANCY = BASE_URL + "apply_job";
 
     //Company
     public static final String GET_COMPANY_JOBS = BASE_URL + "get_my_jobs";
     public static final String ADD_JOB = BASE_URL + "add_job";
+    public static final String UPDATE_JOB = BASE_URL + "update_job";
     public static final String DELETE_JOB = BASE_URL + "delete_job";
     public static final String GET_JOB_REQUESTS = BASE_URL + "get_job_requests";
-    public static final String UPDATE_COMPANY = BASE_URL + "update_company";
+    public static final String UPDATE_COMPANY = BASE_URL + "update_jobs";
     public static final String RESET_PASSWORD_REQUEST = BASE_URL + "reset_password_request";
     public static final String SET_NEW_PASSWORD = BASE_URL + "set_new_password";
     public static final String CHANGE_REQUEST_STATUS = BASE_URL + "change_request_status";

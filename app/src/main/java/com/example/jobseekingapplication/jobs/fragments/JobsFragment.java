@@ -1,4 +1,4 @@
-package com.example.jobseekingapplication.company.fragments;
+package com.example.jobseekingapplication.jobs.fragments;
 
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -23,9 +23,7 @@ import com.androidnetworking.common.Priority;
 import com.androidnetworking.error.ANError;
 import com.androidnetworking.interfaces.JSONObjectRequestListener;
 import com.example.jobseekingapplication.R;
-import com.example.jobseekingapplication.company.adapters.CompanyJobsAdapter;
-import com.example.jobseekingapplication.jobseeker.adapters.JobVacanciesAdapter;
-import com.example.jobseekingapplication.jobseeker.fragments.JobVacanciesFragment;
+import com.example.jobseekingapplication.jobs.adapters.JobsJobsAdapter;
 import com.example.jobseekingapplication.model.JobVacancy;
 import com.example.jobseekingapplication.utils.SharedPrefManager;
 import com.example.jobseekingapplication.utils.Urls;
@@ -36,7 +34,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-public class CompanyJobsFragment extends Fragment  implements  SwipeRefreshLayout.OnRefreshListener{
+public class JobsFragment extends Fragment  implements  SwipeRefreshLayout.OnRefreshListener{
 
     Context context;
     ProgressDialog pDialog;
@@ -44,7 +42,7 @@ public class CompanyJobsFragment extends Fragment  implements  SwipeRefreshLayou
     NavController navController;
     RecyclerView mList;
     ArrayList<JobVacancy> list;
-    CompanyJobsAdapter mAdapter;
+    JobsJobsAdapter mAdapter;
     SwipeRefreshLayout mSwipeRefreshLayout;
 
     @Override
@@ -53,7 +51,7 @@ public class CompanyJobsFragment extends Fragment  implements  SwipeRefreshLayou
         this.context = context;
     }
 
-    public CompanyJobsFragment() {}
+    public JobsFragment() {}
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -63,7 +61,7 @@ public class CompanyJobsFragment extends Fragment  implements  SwipeRefreshLayou
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_company_jobs, container, false);
+        View view = inflater.inflate(R.layout.fragment_jobs_jobs_list, container, false);
         mSwipeRefreshLayout = view.findViewById(R.id.swipe);
         mSwipeRefreshLayout.setOnRefreshListener(this);
         mSwipeRefreshLayout.setColorSchemeResources(
@@ -99,9 +97,9 @@ public class CompanyJobsFragment extends Fragment  implements  SwipeRefreshLayou
         list = new ArrayList<JobVacancy>();
         pDialog.show();
 
-        String companyId = String.valueOf(SharedPrefManager.getInstance(context).getCompanyData().getId());
+        String jobId = String.valueOf(SharedPrefManager.getInstance(context).getCompanyData().getId());
         AndroidNetworking.get(url)
-                .addQueryParameter("company_id",companyId)
+                .addQueryParameter("job_id",jobId)
                 .setPriority(Priority.MEDIUM)
                 .build()
                 .getAsJSONObject(new JSONObjectRequestListener() {
@@ -115,12 +113,12 @@ public class CompanyJobsFragment extends Fragment  implements  SwipeRefreshLayou
                                 JSONArray jsonArray = jsonObject.getJSONArray("data");
                                 for (int i = 0; i < jsonArray.length(); i++) {
                                     JSONObject obj = jsonArray.getJSONObject(i);
-                                    JSONObject company_data= obj.getJSONObject("company");
+                                    JSONObject job_data= obj.getJSONObject("job");
                                     JSONObject skill_data = obj.getJSONObject("skill");
                                     list.add(
                                             new JobVacancy(
                                                     Integer.parseInt(obj.getString("id")),
-                                                    company_data.getString("company_name"),
+                                                    job_data.getString("job_name"),
                                                     obj.getString("job_position_title"),
                                                     skill_data.getString("skill"),
                                                     Integer.parseInt(skill_data.getString("id")),
@@ -131,7 +129,7 @@ public class CompanyJobsFragment extends Fragment  implements  SwipeRefreshLayou
                                             )
                                     );
                                 }
-                                mAdapter = new CompanyJobsAdapter(context, list);
+                                mAdapter = new JobsJobsAdapter(context, list);
                                 mList.setAdapter(mAdapter);
 
                                 Toast.makeText(context, getResources().getString(R.string.data_loaded), Toast.LENGTH_SHORT).show();
@@ -151,7 +149,7 @@ public class CompanyJobsFragment extends Fragment  implements  SwipeRefreshLayou
                     public void onError(ANError error) {
                         mSwipeRefreshLayout.setRefreshing(false);
                         pDialog.dismiss();
-                        Log.e("jobs anerror",error.getErrorBody());
+                        Log.e("jobs anerror",error.getErrorDetail());
                     }
                 });
     }

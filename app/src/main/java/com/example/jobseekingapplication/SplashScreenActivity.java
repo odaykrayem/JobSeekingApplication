@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-import com.example.jobseekingapplication.company.CompanyMain;
+import com.example.jobseekingapplication.jobs.JobsMain;
 import com.example.jobseekingapplication.jobseeker.JobSeekerMain;
 import com.example.jobseekingapplication.utils.Constants;
 import com.example.jobseekingapplication.utils.SharedPrefManager;
@@ -26,7 +26,7 @@ public class SplashScreenActivity extends AppCompatActivity {
                     if (SharedPrefManager.getInstance(SplashScreenActivity.this).getUserType() == Constants.USER_TYPE_JOB_SEEKER) {
                         startActivity(new Intent(SplashScreenActivity.this, JobSeekerMain.class));
                     } else {
-                        startActivity(new Intent(SplashScreenActivity.this, CompanyMain.class));
+                        startActivity(new Intent(SplashScreenActivity.this, JobsMain.class));
                     }
                 } else {
                     startActivity(new Intent(SplashScreenActivity.this, LoginActivity.class));

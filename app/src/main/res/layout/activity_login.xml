@@ -68,7 +68,7 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"
                 android:buttonTint="@color/white"
-                android:text="@string/company"
+                android:text="@string/jobs"
                 android:layout_weight="1"/>
 
 

@@ -1,4 +1,4 @@
-package com.example.jobseekingapplication.company.adapters;
+package com.example.jobseekingapplication.jobs.adapters;
 
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -23,10 +23,8 @@ import com.androidnetworking.common.Priority;
 import com.androidnetworking.error.ANError;
 import com.androidnetworking.interfaces.JSONObjectRequestListener;
 import com.example.jobseekingapplication.R;
-import com.example.jobseekingapplication.model.JobApplication;
 import com.example.jobseekingapplication.model.JobRequest;
 import com.example.jobseekingapplication.utils.Constants;
-import com.example.jobseekingapplication.utils.SharedPrefManager;
 import com.example.jobseekingapplication.utils.Urls;
 
 import org.json.JSONException;
@@ -35,7 +33,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CompanyJobRequestsAdapter extends RecyclerView.Adapter<CompanyJobRequestsAdapter.ViewHolder> {
+public class JobsJobRequestsAdapter extends RecyclerView.Adapter<JobsJobRequestsAdapter.ViewHolder> {
 
     Context context;
     private List<JobRequest> list;
@@ -44,7 +42,7 @@ public class CompanyJobRequestsAdapter extends RecyclerView.Adapter<CompanyJobRe
      ProgressDialog pDialog;
      NavController navController;
 
-    public CompanyJobRequestsAdapter(Context context, ArrayList<JobRequest> list) {
+    public JobsJobRequestsAdapter(Context context, ArrayList<JobRequest> list) {
         this.context = context;
         this.list = list;
     }

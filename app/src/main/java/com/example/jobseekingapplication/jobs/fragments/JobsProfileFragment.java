@@ -1,4 +1,4 @@
-package com.example.jobseekingapplication.company.fragments;
+package com.example.jobseekingapplication.jobs.fragments;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -16,7 +16,7 @@ import com.example.jobseekingapplication.R;
 import com.example.jobseekingapplication.model.Company;
 import com.example.jobseekingapplication.utils.SharedPrefManager;
 
-public class CompanyProfileFragment extends Fragment {
+public class JobsProfileFragment extends Fragment {
 
     Context context;
     TextView name, email, address, details;
@@ -28,7 +28,7 @@ public class CompanyProfileFragment extends Fragment {
         this.context = context;
     }
 
-    public CompanyProfileFragment() {}
+    public JobsProfileFragment() {}
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -38,7 +38,7 @@ public class CompanyProfileFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_company_profile, container, false);
+        return inflater.inflate(R.layout.fragment_jobs_profile, container, false);
     }
 
     @Override

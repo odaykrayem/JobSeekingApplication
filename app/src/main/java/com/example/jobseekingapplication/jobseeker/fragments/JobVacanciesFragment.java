@@ -132,12 +132,12 @@ public class JobVacanciesFragment extends Fragment implements  SwipeRefreshLayou
                                 JSONArray jsonArray = jsonObject.getJSONArray("data");
                                 for (int i = 0; i < jsonArray.length(); i++) {
                                     JSONObject obj = jsonArray.getJSONObject(i);
-                                    JSONObject company_data= obj.getJSONObject("company");
+                                    JSONObject company_data= obj.getJSONObject("job");
                                     JSONObject skill_data = obj.getJSONObject("skill");
                                     list.add(
                                             new JobVacancy(
                                                     Integer.parseInt(obj.getString("id")),
-                                                    company_data.getString("company_name"),
+                                                    company_data.getString("job_name"),
                                                     obj.getString("job_position_title"),
                                                     skill_data.getString("skill"),
                                                     Integer.parseInt(skill_data.getString("id")),

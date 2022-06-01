@@ -13,7 +13,7 @@
     <string name="upload_cv">Upload CV</string>
     <string name="signup">Signup</string>
     <string name="btn_link_to_login">Already registered.. login now</string>
-    <string name="btn_link_to_signup_company">Signup as Company</string>
+    <string name="btn_link_to_signup_jobs">Signup as Jobs</string>
     <string name="hint_summary">Summary</string>
     <string name="btn_link_to_register">Not registered yet.. go to Signup</string>
     <string name="login">Login</string>
@@ -31,9 +31,9 @@
     <string name="show_cv">Show CV</string>
     <string name="update_profile">Update Profile</string>
     <string name="delete">Delete</string>
-    <string name="hint_company_name">Company name</string>
-    <string name="hint_company_address">Company Address</string>
-    <string name="hint_company_details">Company Details</string>
+    <string name="hint_jobs_name">Jobs name</string>
+    <string name="hint_jobs_address">Jobs Address</string>
+    <string name="hint_jobs_details">Jobs Details</string>
     <string name="btn_link_to_signup_jobseker">Signup as JobSeeker</string>
     <string name="jobseeker_name">JobSeeker name</string>
     <string name="date">Date</string>
@@ -46,7 +46,7 @@
     <string name="profile">My Profile</string>
     <string name="logout">Logout</string>
     <string name="job_vacancy_details">Job Vacancy Details</string>
-    <string name="company">Company</string>
+    <string name="jobs">Jobs</string>
     <string name="btn_link_to_reset">Forget your password. Reset</string>
     <string name="hint_enter_code">Enter the code sent to your email</string>
     <string name="verify">Verify</string>
@@ -86,4 +86,8 @@
     <string name="bookmarked">Boomarked</string>
     <string name="screenshot">Screenshot</string>
     <string name="jobseeker_details">JobSeeker Details</string>
+    <string name="update_job">Update Job Vacancy</string>
+    <string name="update_job_success">Job vacancy updated successfully</string>
+    <string name="update">Update</string>
+    <string name="please_wait">Please wiat your account to be activated by admin</string>
 </resources>

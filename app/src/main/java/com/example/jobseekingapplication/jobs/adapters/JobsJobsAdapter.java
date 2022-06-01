@@ -1,7 +1,8 @@
-package com.example.jobseekingapplication.company.adapters;
+package com.example.jobseekingapplication.jobs.adapters;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +14,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.androidnetworking.AndroidNetworking;
@@ -30,35 +32,36 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CompanyJobsAdapter extends RecyclerView.Adapter<CompanyJobsAdapter.ViewHolder> {
+public class JobsJobsAdapter extends RecyclerView.Adapter<JobsJobsAdapter.ViewHolder> {
 
     Context context;
     private List<JobVacancy> list;
     public NavController navController;
     ProgressDialog pDialog;
-    public CompanyJobsAdapter(Context context, ArrayList<JobVacancy> list) {
+    public JobsJobsAdapter(Context context, ArrayList<JobVacancy> list) {
         this.context = context;
         this.list = list;
     }
 
     @NonNull
     @Override
-    public CompanyJobsAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public JobsJobsAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
         View listItem = layoutInflater.inflate(R.layout.item_company_job, parent, false);
-        CompanyJobsAdapter.ViewHolder viewHolder = new CompanyJobsAdapter.ViewHolder(listItem);
+        JobsJobsAdapter.ViewHolder viewHolder = new JobsJobsAdapter.ViewHolder(listItem);
+        navController = Navigation.findNavController(parent);
 
         return viewHolder;
     }
 
 
     @Override
-    public void onBindViewHolder(@NonNull CompanyJobsAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull JobsJobsAdapter.ViewHolder holder, int position) {
 
         JobVacancy item = list.get(position);
 
         holder.jobPositionTitle.setText(item.getJobPositionTitle());
-        holder.requiredExperience.setText(item.getCompanyName());
+        holder.requiredExperience.setText(item.getRequiredExperience());
         holder.workType.setText(item.getWorkType());
         pDialog = new ProgressDialog(context);
         pDialog.setMessage("Loading...");
@@ -84,6 +87,11 @@ public class CompanyJobsAdapter extends RecyclerView.Adapter<CompanyJobsAdapter.
             dialog.show();
 
         });
+        holder.update.setOnClickListener(v->{
+            Bundle bundle = new Bundle();
+            bundle.putSerializable("job", item);
+            navController.navigate(R.id.action_ToUdpateJobVacancy, bundle);
+        });
     }
 
     private void deleteJob(String jobOpportunityId, int position) {
@@ -93,7 +101,7 @@ public class CompanyJobsAdapter extends RecyclerView.Adapter<CompanyJobsAdapter.
         String url = Urls.DELETE_JOB;
         String advertiser_id = String.valueOf(SharedPrefManager.getInstance(context).getUserId());
         AndroidNetworking.post(url)
-                .addBodyParameter("company_id", advertiser_id)
+                .addBodyParameter("job_id", advertiser_id)
                 .addBodyParameter("job_id", jobOpportunityId)
                 .setPriority(Priority.MEDIUM)
                 .build()
@@ -151,7 +159,7 @@ public class CompanyJobsAdapter extends RecyclerView.Adapter<CompanyJobsAdapter.
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         public TextView jobPositionTitle, requiredExperience, workType;
-        public Button delete;
+        public Button delete, update;
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -159,6 +167,7 @@ public class CompanyJobsAdapter extends RecyclerView.Adapter<CompanyJobsAdapter.
             this.requiredExperience = itemView.findViewById(R.id.required_experience);
             this.workType = itemView.findViewById(R.id.work_type);
             this.delete = itemView.findViewById(R.id.delete);
+            this.update = itemView.findViewById(R.id.update);
         }
     }
 

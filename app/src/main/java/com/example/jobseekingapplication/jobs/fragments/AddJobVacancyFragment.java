@@ -1,4 +1,4 @@
-package com.example.jobseekingapplication.company.fragments;
+package com.example.jobseekingapplication.jobs.fragments;
 
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -112,10 +112,10 @@ public class AddJobVacancyFragment extends Fragment {
         requiredExperience= mRequiredExperienceET.getText().toString().trim();
         salaryRange= mSalaryRangeET.getText().toString().trim();
 
-        String companyId = String.valueOf(SharedPrefManager.getInstance(context).getUserId());
+        String jobId = String.valueOf(SharedPrefManager.getInstance(context).getUserId());
 
         AndroidNetworking.post(url)
-                .addBodyParameter("company_id", companyId)
+                .addBodyParameter("job_id", jobId)
                 .addBodyParameter("job_position_title", jobPositionTitle)
                 .addBodyParameter("skill_id", String.valueOf(selectedSkillId))
                 .addBodyParameter("required_experience", requiredExperience)
@@ -157,8 +157,8 @@ public class AddJobVacancyFragment extends Fragment {
                             JSONObject error = new JSONObject(anError.getErrorBody());
                             JSONObject data = error.getJSONObject("data");
                             Toast.makeText(context, error.getString("message"), Toast.LENGTH_SHORT).show();
-                            if (data.has("company_id")) {
-                                Toast.makeText(context, data.getJSONArray("company_id").toString(), Toast.LENGTH_SHORT).show();
+                            if (data.has("job_id")) {
+                                Toast.makeText(context, data.getJSONArray("job_id").toString(), Toast.LENGTH_SHORT).show();
                             }
                             if (data.has("job_position_title")) {
                                 Toast.makeText(context, data.getJSONArray("job_position_title").toString(), Toast.LENGTH_SHORT).show();

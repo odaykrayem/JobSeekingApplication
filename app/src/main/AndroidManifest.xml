@@ -21,8 +21,8 @@
         </activity>
         <activity android:name=".ResetPasswordActivity" />
         <activity android:name=".LoginActivity" />
-        <activity android:name=".company.CompanySignUpActivity" />
-        <activity android:name=".company.CompanyMain" />
+        <activity android:name=".jobs.JobsSignUpActivity" />
+        <activity android:name=".jobs.JobsMain" />
         <activity android:name=".jobseeker.JobSeekerSignUpActivity">
 
         </activity>

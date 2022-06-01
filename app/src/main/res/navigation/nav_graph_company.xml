@@ -7,22 +7,31 @@
 
     <fragment
         android:id="@+id/menu_jobs"
-        android:name="com.example.jobseekingapplication.company.fragments.CompanyJobsFragment"
+        android:name="com.example.jobseekingapplication.jobs.fragments.JobsFragment"
         android:label="@string/posted_jobs"
-        tools:layout="@layout/fragment_company_jobs" >
+        tools:layout="@layout/fragment_jobs_jobs_list" >
         <action
             android:id="@+id/action_ToAddNewJobVacancy"
             app:destination="@id/AddJobVacancyFragment"
             app:popUpTo="@id/menu_jobs"/>
+        <action
+            android:id="@+id/action_ToUdpateJobVacancy"
+            app:destination="@id/UpdateJobVacancyFragment"
+            app:popUpTo="@id/menu_jobs"/>
     </fragment>
     <fragment
         android:id="@+id/AddJobVacancyFragment"
-        android:name="com.example.jobseekingapplication.company.fragments.AddJobVacancyFragment"
+        android:name="com.example.jobseekingapplication.jobs.fragments.AddJobVacancyFragment"
         android:label="@string/add_job"
         tools:layout="@layout/fragment_add_job_vacancy"/>
     <fragment
+        android:id="@+id/UpdateJobVacancyFragment"
+        android:name="com.example.jobseekingapplication.jobs.fragments.UpdateJobVacancyFragment"
+        android:label="@string/update_job"
+        tools:layout="@layout/fragment_update_job_vacancy"/>
+    <fragment
         android:id="@+id/menu_job_requests"
-        android:name="com.example.jobseekingapplication.company.fragments.CompanyJobRequestsFragment"
+        android:name="com.example.jobseekingapplication.jobs.fragments.JobRequestsFragment"
         android:label="@string/job_requests"
         tools:layout="@layout/fragment_job_requests">
         <action
@@ -48,9 +57,9 @@
 
     <fragment
         android:id="@+id/menu_profile"
-        android:name="com.example.jobseekingapplication.company.fragments.CompanyProfileFragment"
+        android:name="com.example.jobseekingapplication.jobs.fragments.JobsProfileFragment"
         android:label="@string/profile"
-        tools:layout="@layout/fragment_company_profile">
+        tools:layout="@layout/fragment_jobs_profile">
         <action
             android:id="@+id/action_ToUpdateProfile"
             app:destination="@id/UpdateProfileFragment"
@@ -58,7 +67,7 @@
     </fragment>
     <fragment
         android:id="@+id/UpdateProfileFragment"
-        android:name="com.example.jobseekingapplication.company.fragments.CompanyUpdateProfileFragment"
+        android:name="com.example.jobseekingapplication.jobs.fragments.JobsUpdateProfileFragment"
         android:label="@string/update_profile"
-        tools:layout="@layout/fragment_company_update_profile"/>
+        tools:layout="@layout/fragment_jobs_update_profile"/>
 </navigation>

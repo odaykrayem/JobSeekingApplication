@@ -16,7 +16,7 @@ import com.androidnetworking.AndroidNetworking;
 import com.androidnetworking.common.Priority;
 import com.androidnetworking.error.ANError;
 import com.androidnetworking.interfaces.JSONObjectRequestListener;
-import com.example.jobseekingapplication.company.CompanyMain;
+import com.example.jobseekingapplication.jobs.JobsMain;
 import com.example.jobseekingapplication.jobseeker.JobSeekerMain;
 import com.example.jobseekingapplication.jobseeker.JobSeekerSignUpActivity;
 import com.example.jobseekingapplication.model.Company;
@@ -134,20 +134,27 @@ public class LoginActivity extends AppCompatActivity {
                                             )
 
                                     );
+                                    goToUserMain(userType);
 
                                 } else {
-                                    SharedPrefManager.getInstance(LoginActivity.this).companyLogin(
-                                            new Company(
-                                                    Integer.parseInt(userJson.getString("id")),
-                                                    userJson.getString("company_name"),
-                                                    userJson.getString("company_address"),
-                                                    userJson.getString("company_details"),
-                                                    userJson.getString("email")
+                                    if(userJson.getInt("activated") == 1){
+                                        SharedPrefManager.getInstance(LoginActivity.this).companyLogin(
+                                                new Company(
+                                                        Integer.parseInt(userJson.getString("id")),
+                                                        userJson.getString("job_name"),
+                                                        userJson.getString("job_address"),
+                                                        userJson.getString("job_details"),
+                                                        userJson.getString("email")
 
-                                            )
-                                    );
+                                                )
+                                        );
+                                        goToUserMain(userType);
+
+                                    }else{
+                                        Toast.makeText(LoginActivity.this, getResources().getString(R.string.please_wait), Toast.LENGTH_SHORT).show();
+                                    }
+
                                 }
-                                goToUserMain(userType);
                             }else{
                                 Toast.makeText(LoginActivity.this, message, Toast.LENGTH_SHORT).show();
                             }
@@ -355,7 +362,7 @@ public class LoginActivity extends AppCompatActivity {
         if (type == Constants.USER_TYPE_JOB_SEEKER) {
             startActivity(new Intent(LoginActivity.this, JobSeekerMain.class));
         } else {
-            startActivity(new Intent(LoginActivity.this, CompanyMain.class));
+            startActivity(new Intent(LoginActivity.this, JobsMain.class));
         }
         finish();
     }

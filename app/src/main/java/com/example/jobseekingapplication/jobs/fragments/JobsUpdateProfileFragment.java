@@ -1,4 +1,4 @@
-package com.example.jobseekingapplication.company.fragments;
+package com.example.jobseekingapplication.jobs.fragments;
 
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -24,16 +24,15 @@ import com.androidnetworking.error.ANError;
 import com.androidnetworking.interfaces.JSONObjectRequestListener;
 import com.example.jobseekingapplication.R;
 import com.example.jobseekingapplication.model.Company;
-import com.example.jobseekingapplication.model.JobSeeker;
 import com.example.jobseekingapplication.utils.SharedPrefManager;
 import com.example.jobseekingapplication.utils.Urls;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class CompanyUpdateProfileFragment extends Fragment {
+public class JobsUpdateProfileFragment extends Fragment {
     EditText mCompanyName, mCompanyAddress, mCompanyDetails;
-    String companyName, companyAddress, companyDetails;
+    String jobName, jobAddress, jobDetails;
 
     Button mUpdateBtn;
     Context context;
@@ -45,7 +44,7 @@ public class CompanyUpdateProfileFragment extends Fragment {
         super.onAttach(context);
         this.context = context;
     }
-    public CompanyUpdateProfileFragment() {}
+    public JobsUpdateProfileFragment() {}
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -55,7 +54,7 @@ public class CompanyUpdateProfileFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_company_update_profile, container, false);
+        return inflater.inflate(R.layout.fragment_jobs_update_profile, container, false);
     }
 
     @Override
@@ -65,10 +64,10 @@ public class CompanyUpdateProfileFragment extends Fragment {
         mCompanyAddress = view.findViewById(R.id.company_address);
         mCompanyDetails = view.findViewById(R.id.company_details);
 
-        Company company = SharedPrefManager.getInstance(context).getCompanyData();
-        mCompanyName.setText(company.getCompanyName());
-        mCompanyAddress.setText(company.getCompanyAddress());
-        mCompanyDetails.setText(company.getCompanyDetails());
+        Company job = SharedPrefManager.getInstance(context).getCompanyData();
+        mCompanyName.setText(job.getCompanyName());
+        mCompanyAddress.setText(job.getCompanyAddress());
+        mCompanyDetails.setText(job.getCompanyDetails());
 
         mUpdateBtn = view.findViewById(R.id.update);
         navController = Navigation.findNavController(view);
@@ -86,16 +85,16 @@ public class CompanyUpdateProfileFragment extends Fragment {
         pDialog.show();
         String url = Urls.UPDATE_COMPANY;
 
-        companyName = mCompanyName.getText().toString().trim();
-        companyAddress = mCompanyAddress.getText().toString().trim();
-        companyDetails = mCompanyDetails.getText().toString().trim();
+        jobName = mCompanyName.getText().toString().trim();
+        jobAddress = mCompanyAddress.getText().toString().trim();
+        jobDetails = mCompanyDetails.getText().toString().trim();
 
         String userId = String.valueOf(SharedPrefManager.getInstance(context).getUserId());
         AndroidNetworking.post(url)
                 .addBodyParameter("user_id", userId)
-                .addBodyParameter("name", companyName)
-                .addBodyParameter("address", companyAddress)
-                .addBodyParameter("details", companyDetails)
+                .addBodyParameter("name", jobName)
+                .addBodyParameter("address", jobAddress)
+                .addBodyParameter("details", jobDetails)
                 .setPriority(Priority.MEDIUM)
                 .build()
                 .getAsJSONObject(new JSONObjectRequestListener() {
@@ -110,9 +109,9 @@ public class CompanyUpdateProfileFragment extends Fragment {
 
                             if (message.toLowerCase().contains(userFounded.toLowerCase())) {
                                 SharedPrefManager.getInstance(context).companyUpdate(
-                                        userJson.getString("company_name"),
-                                        userJson.getString("company_address"),
-                                        userJson.getString("company_details")
+                                        userJson.getString("job_name"),
+                                        userJson.getString("job_address"),
+                                        userJson.getString("job_details")
 
                                 );
                                 Toast.makeText(context, context.getResources().getString(R.string.updated_success), Toast.LENGTH_SHORT).show();

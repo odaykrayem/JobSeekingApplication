@@ -1,4 +1,4 @@
-package com.example.jobseekingapplication.company.fragments;
+package com.example.jobseekingapplication.jobs.fragments;
 
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -22,13 +22,9 @@ import com.androidnetworking.common.Priority;
 import com.androidnetworking.error.ANError;
 import com.androidnetworking.interfaces.JSONObjectRequestListener;
 import com.example.jobseekingapplication.R;
-import com.example.jobseekingapplication.company.adapters.CompanyJobRequestsAdapter;
-import com.example.jobseekingapplication.company.adapters.CompanyJobsAdapter;
-import com.example.jobseekingapplication.jobseeker.adapters.AppliedJobsAdapter;
-import com.example.jobseekingapplication.model.JobApplication;
+import com.example.jobseekingapplication.jobs.adapters.JobsJobRequestsAdapter;
 import com.example.jobseekingapplication.model.JobRequest;
 import com.example.jobseekingapplication.model.JobSeeker;
-import com.example.jobseekingapplication.model.JobVacancy;
 import com.example.jobseekingapplication.utils.SharedPrefManager;
 import com.example.jobseekingapplication.utils.Urls;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -38,7 +34,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-public class CompanyJobRequestsFragment extends Fragment implements  SwipeRefreshLayout.OnRefreshListener{
+public class JobRequestsFragment extends Fragment implements  SwipeRefreshLayout.OnRefreshListener{
 
     Context context;
     ProgressDialog pDialog;
@@ -46,7 +42,7 @@ public class CompanyJobRequestsFragment extends Fragment implements  SwipeRefres
     NavController navController;
     RecyclerView mList;
     ArrayList<JobRequest> list;
-    CompanyJobRequestsAdapter mAdapter;
+    JobsJobRequestsAdapter mAdapter;
     SwipeRefreshLayout mSwipeRefreshLayout;
 
     @Override
@@ -54,7 +50,7 @@ public class CompanyJobRequestsFragment extends Fragment implements  SwipeRefres
         super.onAttach(context);
         this.context = context;
     }
-    public CompanyJobRequestsFragment() {
+    public JobRequestsFragment() {
     }
 
     @Override
@@ -103,7 +99,7 @@ public class CompanyJobRequestsFragment extends Fragment implements  SwipeRefres
         pDialog.show();
         String companyId = String.valueOf(SharedPrefManager.getInstance(context).getUserId());
         AndroidNetworking.get(url)
-                .addQueryParameter("company_id", companyId)
+                .addQueryParameter("job_id", companyId)
                 .setPriority(Priority.MEDIUM)
                 .build()
                 .getAsJSONObject(new JSONObjectRequestListener() {
@@ -144,7 +140,7 @@ public class CompanyJobRequestsFragment extends Fragment implements  SwipeRefres
                                          jobRequest
                                     );
                                 }
-                                mAdapter = new CompanyJobRequestsAdapter(context, list);
+                                mAdapter = new JobsJobRequestsAdapter(context, list);
                                 mList.setAdapter(mAdapter);
 
                                 Toast.makeText(context, getResources().getString(R.string.data_loaded), Toast.LENGTH_SHORT).show();

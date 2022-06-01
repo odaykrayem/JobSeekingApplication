@@ -1,4 +1,4 @@
-package com.example.jobseekingapplication.company;
+package com.example.jobseekingapplication.jobs;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,7 +17,6 @@ import com.androidnetworking.error.ANError;
 import com.androidnetworking.interfaces.JSONObjectRequestListener;
 import com.example.jobseekingapplication.LoginActivity;
 import com.example.jobseekingapplication.R;
-import com.example.jobseekingapplication.jobseeker.JobSeekerMain;
 import com.example.jobseekingapplication.jobseeker.JobSeekerSignUpActivity;
 import com.example.jobseekingapplication.model.Company;
 import com.example.jobseekingapplication.utils.SharedPrefManager;
@@ -25,7 +24,7 @@ import com.example.jobseekingapplication.utils.Urls;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class CompanySignUpActivity extends AppCompatActivity {
+public class JobsSignUpActivity extends AppCompatActivity {
 
     EditText mCompanyNameET, mEmailET, mPasswordET, mAddressET, mDetailsET;
     String companyName, email, password, address, details;
@@ -37,7 +36,7 @@ public class CompanySignUpActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_company_sign_up);
+        setContentView(R.layout.activity_jobs_sign_up);
 
         mCompanyNameET = findViewById(R.id.company_name);
         mEmailET = findViewById(R.id.email);
@@ -96,12 +95,12 @@ public class CompanySignUpActivity extends AppCompatActivity {
                             JSONObject userJson = obj.getJSONObject("data");
                             if (message.toLowerCase().contains(userFounded.toLowerCase())) {
                                 Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
-                                SharedPrefManager.getInstance(CompanySignUpActivity.this).companyLogin(
+                                SharedPrefManager.getInstance(JobsSignUpActivity.this).companyLogin(
                                         new Company(
                                                 Integer.parseInt(userJson.getString("id")),
-                                                userJson.getString("company_name"),
-                                                userJson.getString("company_address"),
-                                                userJson.getString("company_details"),
+                                                userJson.getString("job_name"),
+                                                userJson.getString("job_address"),
+                                                userJson.getString("job_details"),
                                                 userJson.getString("email")
                                                 )
                                 );
@@ -128,7 +127,7 @@ public class CompanySignUpActivity extends AppCompatActivity {
                         try {
                             JSONObject error = new JSONObject(anError.getErrorBody());
                             JSONObject data = error.getJSONObject("data");
-                            Toast.makeText(CompanySignUpActivity.this, error.getString("message"), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(JobsSignUpActivity.this, error.getString("message"), Toast.LENGTH_SHORT).show();
                             if (data.has("email")) {
                                 Toast.makeText(getApplicationContext(), data.getJSONArray("email").toString(), Toast.LENGTH_SHORT).show();
                             }
@@ -168,7 +167,7 @@ public class CompanySignUpActivity extends AppCompatActivity {
                 String codeFromUser = code.getText().toString().trim();
                 if(codeFromUser.equals(verificationCode)){
                     Toast.makeText(this, getResources().getString(R.string.code_correct), Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(CompanySignUpActivity.this, CompanyMain.class));
+                    startActivity(new Intent(JobsSignUpActivity.this, LoginActivity.class));
                     finish();
                 }else{
                     Toast.makeText(this, getResources().getString(R.string.code_not_correct), Toast.LENGTH_SHORT).show();
