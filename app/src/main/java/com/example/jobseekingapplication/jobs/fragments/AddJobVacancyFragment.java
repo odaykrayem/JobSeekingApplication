@@ -103,17 +103,13 @@ public class AddJobVacancyFragment extends Fragment {
     private void addJob() {
         pDialog.show();
         mAddJobBtn.setEnabled(false);
-
         String url = Urls.ADD_JOB;
-
         jobPositionTitle = mJobPositionTitleET.getText().toString().trim();
         workType= mWorkTypeET.getText().toString().trim();
         workTime= mWorkTimeET.getText().toString().trim();
         requiredExperience= mRequiredExperienceET.getText().toString().trim();
         salaryRange= mSalaryRangeET.getText().toString().trim();
-
         String jobId = String.valueOf(SharedPrefManager.getInstance(context).getUserId());
-
         AndroidNetworking.post(url)
                 .addBodyParameter("job_id", jobId)
                 .addBodyParameter("job_position_title", jobPositionTitle)
@@ -128,11 +124,9 @@ public class AddJobVacancyFragment extends Fragment {
                     @Override
                     public void onResponse(JSONObject response) {
                         try {
-                            //converting response to json object
                             JSONObject obj = response;
                             String message = obj.getString("message");
                             String userFounded = "User Saved";
-                            //if no error in response
                             if (message.toLowerCase().contains(userFounded.toLowerCase())) {
                                 Toast.makeText(context, context.getResources().getString(R.string.add_job_success), Toast.LENGTH_SHORT).show();
                                 navController.popBackStack();

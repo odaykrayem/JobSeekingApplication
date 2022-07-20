@@ -23,7 +23,7 @@ import com.androidnetworking.common.Priority;
 import com.androidnetworking.error.ANError;
 import com.androidnetworking.interfaces.JSONObjectRequestListener;
 import com.example.jobseekingapplication.R;
-import com.example.jobseekingapplication.model.Company;
+import com.example.jobseekingapplication.model.Jobs;
 import com.example.jobseekingapplication.utils.SharedPrefManager;
 import com.example.jobseekingapplication.utils.Urls;
 
@@ -64,7 +64,7 @@ public class JobsUpdateProfileFragment extends Fragment {
         mCompanyAddress = view.findViewById(R.id.company_address);
         mCompanyDetails = view.findViewById(R.id.company_details);
 
-        Company job = SharedPrefManager.getInstance(context).getCompanyData();
+        Jobs job = SharedPrefManager.getInstance(context).getCompanyData();
         mCompanyName.setText(job.getCompanyName());
         mCompanyAddress.setText(job.getCompanyAddress());
         mCompanyDetails.setText(job.getCompanyDetails());

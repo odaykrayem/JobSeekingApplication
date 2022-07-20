@@ -112,7 +112,6 @@ public class JobSeekerAppliedJobsFragment extends Fragment implements  SwipeRefr
                                     if(!obj.isNull("job")){
                                         JSONObject job_data = obj.getJSONObject("job");
                                         JSONObject company_data = job_data.getJSONObject("job");
-
                                         list.add(
                                                 new JobApplication(
                                                         Integer.parseInt(obj.getString("id")),
@@ -123,7 +122,6 @@ public class JobSeekerAppliedJobsFragment extends Fragment implements  SwipeRefr
                                                 )
                                         );
                                     }
-
                                 }
                                 mAdapter = new AppliedJobsAdapter(context, list);
                                 mList.setAdapter(mAdapter);

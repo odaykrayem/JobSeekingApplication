@@ -196,13 +196,11 @@ public class JobSeekerSignUpActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(JSONObject response) {
                         try {
-                            //converting response to json object
                             JSONObject obj = response;
                             String message = obj.getString("message");
                             String userFounded = "User Saved";
                             JSONObject userJson = obj.getJSONObject("data");
                             JSONObject skill_data = userJson.getJSONObject("skill");
-
                             if (message.toLowerCase().contains(userFounded.toLowerCase())) {
                                 Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
                                 SharedPrefManager.getInstance(JobSeekerSignUpActivity.this).jobSeekerLogin(
@@ -222,7 +220,6 @@ public class JobSeekerSignUpActivity extends AppCompatActivity {
                                 );
                                 verificationCode = userJson.getString("status");
                                 Log.e("code", verificationCode);
-
                                 verifyEmail(verificationCode);
                             }
                             pDialog.dismiss();
@@ -252,7 +249,6 @@ public class JobSeekerSignUpActivity extends AppCompatActivity {
                             if (data.has("password")) {
                                 Toast.makeText(getApplicationContext(), data.getJSONArray("password").toString(), Toast.LENGTH_SHORT).show();
                             }
-
                             if (data.has("name")) {
                                 Toast.makeText(getApplicationContext(), data.getJSONArray("name").toString(), Toast.LENGTH_SHORT).show();
                             }

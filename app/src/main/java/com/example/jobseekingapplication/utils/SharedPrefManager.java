@@ -3,10 +3,8 @@ package com.example.jobseekingapplication.utils;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import com.example.jobseekingapplication.model.Company;
+import com.example.jobseekingapplication.model.Jobs;
 import com.example.jobseekingapplication.model.JobSeeker;
-
-import java.util.Locale;
 
 
 public class SharedPrefManager {
@@ -77,7 +75,7 @@ public class SharedPrefManager {
         editor.apply();
     }
 
-    public void companyLogin(Company object) {
+    public void jobsLogin(Jobs object) {
         SharedPreferences sharedPreferences = context.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putInt(KEY_ID, object.getId());
@@ -100,9 +98,9 @@ public class SharedPrefManager {
 
         editor.apply();
     }
-    public Company getCompanyData() {
+    public Jobs getCompanyData() {
         SharedPreferences sharedPreferences = context.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
-        return new Company(
+        return new Jobs(
                 sharedPreferences.getInt(KEY_ID, -1),
                 sharedPreferences.getString(KEY_NAME, null),
                 sharedPreferences.getString(KEY_ADDRESS, null),

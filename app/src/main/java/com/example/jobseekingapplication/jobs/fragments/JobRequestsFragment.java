@@ -142,7 +142,6 @@ public class JobRequestsFragment extends Fragment implements  SwipeRefreshLayout
                                 }
                                 mAdapter = new JobsJobRequestsAdapter(context, list);
                                 mList.setAdapter(mAdapter);
-
                                 Toast.makeText(context, getResources().getString(R.string.data_loaded), Toast.LENGTH_SHORT).show();
                             }else{
                                 Toast.makeText(context, getResources().getString(R.string.error_load), Toast.LENGTH_SHORT).show();
@@ -163,7 +162,5 @@ public class JobRequestsFragment extends Fragment implements  SwipeRefreshLayout
                         Log.e("apppliedjobs anerror",error.getErrorBody());
                     }
                 });
-
-
     }
 }

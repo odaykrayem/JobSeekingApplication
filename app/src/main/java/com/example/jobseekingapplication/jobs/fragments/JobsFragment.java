@@ -96,7 +96,6 @@ public class JobsFragment extends Fragment  implements  SwipeRefreshLayout.OnRef
         String url = Urls.GET_COMPANY_JOBS;
         list = new ArrayList<JobVacancy>();
         pDialog.show();
-
         String jobId = String.valueOf(SharedPrefManager.getInstance(context).getCompanyData().getId());
         AndroidNetworking.get(url)
                 .addQueryParameter("job_id",jobId)

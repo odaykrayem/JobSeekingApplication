@@ -19,7 +19,7 @@ import com.androidnetworking.interfaces.JSONObjectRequestListener;
 import com.example.jobseekingapplication.jobs.JobsMain;
 import com.example.jobseekingapplication.jobseeker.JobSeekerMain;
 import com.example.jobseekingapplication.jobseeker.JobSeekerSignUpActivity;
-import com.example.jobseekingapplication.model.Company;
+import com.example.jobseekingapplication.model.Jobs;
 import com.example.jobseekingapplication.model.JobSeeker;
 import com.example.jobseekingapplication.utils.Constants;
 import com.example.jobseekingapplication.utils.SharedPrefManager;
@@ -65,7 +65,7 @@ public class LoginActivity extends AppCompatActivity {
                 case R.id.job_seeker:
                     selectedAccountType = 1;
                     break;
-                case R.id.company:
+                case R.id.jobs:
                     selectedAccountType = 2;
                     break;
             }
@@ -82,12 +82,9 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void login() {
-
         mLoginBtn.setEnabled(false);
         pDialog.show();
-
         String url = Urls.LOG_IN;
-
         String email = mEmailET.getText().toString().trim();
         String password = mPasswordET.getText().toString().trim();
         AndroidNetworking.post(url)
@@ -100,20 +97,13 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(JSONObject response) {
                         try {
-                            //converting response to json object
                             JSONObject obj = response;
                             String message = obj.getString("message");
                             String userFounded = "User founded";
-                            //if no error in response
                             if (message.toLowerCase().contains(userFounded.toLowerCase())) {
                                 Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
-                                //getting the user from the response
                                 JSONObject userJson = obj.getJSONObject("data");
-
                                 int userType = userJson.getInt("type");
-
-                                Log.e("uType", userType + "");
-
                                 if (userType == Constants.USER_TYPE_JOB_SEEKER) {
                                     JSONObject skill_data = userJson.getJSONObject("skill");
 
@@ -132,20 +122,17 @@ public class LoginActivity extends AppCompatActivity {
                                                     userJson.getString("summary"),
                                                     userJson.getString("cv")
                                             )
-
                                     );
                                     goToUserMain(userType);
-
                                 } else {
                                     if(userJson.getInt("activated") == 1){
-                                        SharedPrefManager.getInstance(LoginActivity.this).companyLogin(
-                                                new Company(
+                                        SharedPrefManager.getInstance(LoginActivity.this).jobsLogin(
+                                                new Jobs(
                                                         Integer.parseInt(userJson.getString("id")),
                                                         userJson.getString("job_name"),
                                                         userJson.getString("job_address"),
                                                         userJson.getString("job_details"),
                                                         userJson.getString("email")
-
                                                 )
                                         );
                                         goToUserMain(userType);
@@ -153,7 +140,6 @@ public class LoginActivity extends AppCompatActivity {
                                     }else{
                                         Toast.makeText(LoginActivity.this, getResources().getString(R.string.please_wait), Toast.LENGTH_SHORT).show();
                                     }
-
                                 }
                             }else{
                                 Toast.makeText(LoginActivity.this, message, Toast.LENGTH_SHORT).show();
@@ -167,7 +153,6 @@ public class LoginActivity extends AppCompatActivity {
                             Log.e("login", e.getMessage());
                         }
                     }
-
                     @Override
                     public void onError(ANError anError) {
                         pDialog.dismiss();

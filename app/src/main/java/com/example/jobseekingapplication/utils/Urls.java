@@ -14,7 +14,7 @@ public class Urls {
     public static final String GET_SKILLS = BASE_URL+ "get_skills";
     public static final String GET_APPLIED_JOBS = BASE_URL+  "get_job_applications" ;
 
-    public static String REGISTER_COMPANY = BASE_URL + "register_job";
+    public static String REGISTER_JOBS = BASE_URL + "register_job";
     public static String GET_JOB_VACANCIES = BASE_URL + "get_job_opportunities";
     public static String APPLY_FOR_JOB_VACANCY = BASE_URL + "apply_job";
 

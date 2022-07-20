@@ -13,7 +13,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 import com.example.jobseekingapplication.R;
-import com.example.jobseekingapplication.model.Company;
+import com.example.jobseekingapplication.model.Jobs;
 import com.example.jobseekingapplication.utils.SharedPrefManager;
 
 public class JobsProfileFragment extends Fragment {
@@ -47,17 +47,17 @@ public class JobsProfileFragment extends Fragment {
 
         navController = Navigation.findNavController(view);
 
-        Company company= SharedPrefManager.getInstance(context).getCompanyData();
+        Jobs jobs = SharedPrefManager.getInstance(context).getCompanyData();
         name = view.findViewById(R.id.company_name);
 
         email = view.findViewById(R.id.email);
         address = view.findViewById(R.id.company_address);
         details = view.findViewById(R.id.company_details);
 
-        name.setText(company.getCompanyName());
-        email.setText(company.getEmail());
-        address.setText(company.getCompanyAddress());
-        details.setText(company.getCompanyDetails());
+        name.setText(jobs.getCompanyName());
+        email.setText(jobs.getEmail());
+        address.setText(jobs.getCompanyAddress());
+        details.setText(jobs.getCompanyDetails());
 
         update = view.findViewById(R.id.update);
         update.setOnClickListener(v->{

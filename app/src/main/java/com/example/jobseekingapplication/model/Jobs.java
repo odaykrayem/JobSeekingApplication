@@ -1,6 +1,6 @@
 package com.example.jobseekingapplication.model;
 
-public class Company {
+public class Jobs {
 
     private int id;
     private String companyName;
@@ -8,7 +8,7 @@ public class Company {
     private String companyDetails;
     private String email;
 
-    public Company(int id, String companyName, String companyAddress, String companyDetails, String email) {
+    public Jobs(int id, String companyName, String companyAddress, String companyDetails, String email) {
         this.id = id;
         this.companyName = companyName;
         this.companyAddress = companyAddress;

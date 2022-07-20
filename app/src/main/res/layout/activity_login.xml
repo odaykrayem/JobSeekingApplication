@@ -63,7 +63,7 @@
                 android:text="@string/jobseeker"
                 android:layout_weight="1"/>
             <RadioButton
-                android:id="@+id/company"
+                android:id="@+id/jobs"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"

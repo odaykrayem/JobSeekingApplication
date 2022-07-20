@@ -67,13 +67,11 @@ public class JobSeekerProfileFragment extends Fragment {
         mSummaryTV= view.findViewById(R.id.summary);
         mShowCVBtn= view.findViewById(R.id.show_cv);
         mUpdateProfileBtn= view.findViewById(R.id.update);
-
         if(fromCompany){
             mUpdateProfileBtn.setVisibility(View.GONE);
         }else{
             mUpdateProfileBtn.setVisibility(View.VISIBLE);
         }
-
         mNameTV.setText(jobSeeker.getName());
         mPhoneTV.setText(jobSeeker.getPhone());
         mEmailTV.setText(jobSeeker.getEmail());
@@ -83,20 +81,14 @@ public class JobSeekerProfileFragment extends Fragment {
         mLanguageTV.setText(jobSeeker.getLanguage());
         mSummaryTV.setText(jobSeeker.getSummary());
         navController = Navigation.findNavController(view);
-
         mUpdateProfileBtn.setOnClickListener(v->{
             navController.navigate(R.id.action_ToUpdateProfile);
         });
-
-        Log.e("profcv", jobSeeker.getCv());
         mShowCVBtn.setOnClickListener(v->{
             Bundle bundle = new Bundle();
             bundle.putString(Constants.KEY_CV_URL, Urls.FILE_BASE_URL+jobSeeker.getCv());
             bundle.putString(Constants.KEY_FILE_NAME, jobSeeker.getName());
             navController.navigate(R.id.action_Profile_ToShowCVFragment, bundle);
         });
-
-
-
     }
 }

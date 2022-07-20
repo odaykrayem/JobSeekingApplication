@@ -117,7 +117,6 @@ public class JobVacanciesFragment extends Fragment implements  SwipeRefreshLayou
         String url = Urls.GET_JOB_VACANCIES;
         list = new ArrayList<JobVacancy>();
         pDialog.show();
-
         AndroidNetworking.get(url)
                 .setPriority(Priority.MEDIUM)
                 .build()
@@ -150,7 +149,6 @@ public class JobVacanciesFragment extends Fragment implements  SwipeRefreshLayou
                                 }
                                 mAdapter = new JobVacanciesAdapter(context, list, JobVacanciesFragment.this);
                                 mList.setAdapter(mAdapter);
-
                                 Toast.makeText(context, getResources().getString(R.string.data_loaded), Toast.LENGTH_SHORT).show();
                             }else{
                                 Toast.makeText(context, message, Toast.LENGTH_SHORT).show();

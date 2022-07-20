@@ -18,7 +18,7 @@ import com.androidnetworking.interfaces.JSONObjectRequestListener;
 import com.example.jobseekingapplication.LoginActivity;
 import com.example.jobseekingapplication.R;
 import com.example.jobseekingapplication.jobseeker.JobSeekerSignUpActivity;
-import com.example.jobseekingapplication.model.Company;
+import com.example.jobseekingapplication.model.Jobs;
 import com.example.jobseekingapplication.utils.SharedPrefManager;
 import com.example.jobseekingapplication.utils.Urls;
 import org.json.JSONException;
@@ -26,8 +26,8 @@ import org.json.JSONObject;
 
 public class JobsSignUpActivity extends AppCompatActivity {
 
-    EditText mCompanyNameET, mEmailET, mPasswordET, mAddressET, mDetailsET;
-    String companyName, email, password, address, details;
+    EditText mJobsNameET, mEmailET, mPasswordET, mAddressET, mDetailsET;
+    String jobsName, email, password, address, details;
     Button mSignUpBtn, mGoToJobSeekerSignUpBtn, mGoToLoginBtn;
     ProgressDialog pDialog;
     String verificationCode;
@@ -38,11 +38,11 @@ public class JobsSignUpActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_jobs_sign_up);
 
-        mCompanyNameET = findViewById(R.id.company_name);
+        mJobsNameET = findViewById(R.id.jobs_name);
         mEmailET = findViewById(R.id.email);
         mPasswordET = findViewById(R.id.password);
-        mAddressET = findViewById(R.id.company_address);
-        mDetailsET = findViewById(R.id.company_details);
+        mAddressET = findViewById(R.id.jobs_address);
+        mDetailsET = findViewById(R.id.jobs_details);
 
         mSignUpBtn = findViewById(R.id.btnSignup);
         mGoToJobSeekerSignUpBtn = findViewById(R.id.btnLinkToSignUpJobSeeker);
@@ -68,16 +68,16 @@ public class JobsSignUpActivity extends AppCompatActivity {
 
     private void signUp() {
         mSignUpBtn.setEnabled(false);
-        String url = Urls.REGISTER_COMPANY;
+        String url = Urls.REGISTER_JOBS;
         pDialog.show();
-        companyName = mCompanyNameET.getText().toString().trim();
+        jobsName = mJobsNameET.getText().toString().trim();
         email = mEmailET.getText().toString().trim();
         password = mPasswordET.getText().toString().trim();
         address = mAddressET.getText().toString().trim();
         details = mDetailsET.getText().toString().trim();
 
         AndroidNetworking.post(url)
-                .addBodyParameter("name", companyName)
+                .addBodyParameter("name", jobsName)
                 .addBodyParameter("email", email)
                 .addBodyParameter("password", password)
                 .addBodyParameter("address", address)
@@ -95,8 +95,8 @@ public class JobsSignUpActivity extends AppCompatActivity {
                             JSONObject userJson = obj.getJSONObject("data");
                             if (message.toLowerCase().contains(userFounded.toLowerCase())) {
                                 Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
-                                SharedPrefManager.getInstance(JobsSignUpActivity.this).companyLogin(
-                                        new Company(
+                                SharedPrefManager.getInstance(JobsSignUpActivity.this).jobsLogin(
+                                        new Jobs(
                                                 Integer.parseInt(userJson.getString("id")),
                                                 userJson.getString("job_name"),
                                                 userJson.getString("job_address"),
@@ -114,7 +114,7 @@ public class JobsSignUpActivity extends AppCompatActivity {
                             mSignUpBtn.setEnabled(true);
                         } catch (JSONException e) {
                             e.printStackTrace();
-                            Log.e("registercompany catch", e.getMessage());
+                            Log.e("registerjobs catch", e.getMessage());
                             pDialog.dismiss();
                             mSignUpBtn.setEnabled(true);
                         }
@@ -123,7 +123,7 @@ public class JobsSignUpActivity extends AppCompatActivity {
                     public void onError(ANError anError) {
                         pDialog.dismiss();
                         mSignUpBtn.setEnabled(true);
-                        Log.e("registercompanyererror", anError.getErrorBody());
+                        Log.e("registerjobsererror", anError.getErrorBody());
                         try {
                             JSONObject error = new JSONObject(anError.getErrorBody());
                             JSONObject data = error.getJSONObject("data");
@@ -134,7 +134,6 @@ public class JobsSignUpActivity extends AppCompatActivity {
                             if (data.has("password")) {
                                 Toast.makeText(getApplicationContext(), data.getJSONArray("password").toString(), Toast.LENGTH_SHORT).show();
                             }
-
                             if (data.has("name")) {
                                 Toast.makeText(getApplicationContext(), data.getJSONArray("name").toString(), Toast.LENGTH_SHORT).show();
                             }

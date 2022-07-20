@@ -100,14 +100,12 @@ public class JobSeekerUpdateProfileFragment extends Fragment {
         mUpdateBtn.setEnabled(false);
         pDialog.show();
         String url = Urls.UPDATE_JOBSEEKER;
-
         name = mNameET.getText().toString().trim();
         phone = mPhoneET.getText().toString().trim();
         education = mEducationET.getText().toString().trim();
         workExperience = mWorkExperienceET.getText().toString().trim();
         language = mLanguageET.getText().toString().trim();
         summary = mSummaryET.getText().toString().trim();
-
         String userId = String.valueOf(SharedPrefManager.getInstance(context).getUserId());
         AndroidNetworking.post(url)
                 .addBodyParameter("user_id", userId)
@@ -128,7 +126,6 @@ public class JobSeekerUpdateProfileFragment extends Fragment {
                             String message = obj.getString("message");
                             String userFounded = "User Saved";
                             JSONObject userJson = obj.getJSONObject("data");
-
                             if (message.toLowerCase().contains(userFounded.toLowerCase())) {
                                 SharedPrefManager.getInstance(context).jobSeekerUpdate(
                                                 userJson.getString("name"),
